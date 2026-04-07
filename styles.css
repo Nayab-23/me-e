@@ -514,6 +514,10 @@ ul {
   font-weight: 700;
 }
 
+.owner-card .section-text + .section-text {
+  margin-top: 12px;
+}
+
 .owner-principle {
   margin-top: 18px;
 }
@@ -816,9 +820,20 @@ ul {
 }
 
 @media (max-width: 760px) {
+  body {
+    background:
+      radial-gradient(circle at top right, rgba(47, 149, 102, 0.10), transparent 14rem),
+      linear-gradient(180deg, #faf7f0 0%, var(--bg) 100%);
+  }
+
+  body::before {
+    background-size: 28px 28px;
+    opacity: 0.55;
+  }
+
   .page-shell {
-    width: min(100% - 20px, 1180px);
-    padding-top: 10px;
+    width: min(100% - 24px, 1180px);
+    padding: 12px 0 28px;
   }
 
   .topline,
@@ -833,6 +848,26 @@ ul {
     grid-template-columns: 1fr;
   }
 
+  .topline {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .topline a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: rgba(197, 61, 47, 0.10);
+  }
+
   .topline,
   .site-header,
   .site-footer {
@@ -840,9 +875,62 @@ ul {
     align-items: flex-start;
   }
 
-  .site-nav {
-    flex-wrap: wrap;
+  .site-header {
+    gap: 14px;
+    margin-bottom: 18px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 252, 247, 0.82);
+  }
+
+  .brand {
+    display: grid;
+    grid-template-columns: 68px minmax(0, 1fr);
     gap: 12px;
+    width: 100%;
+  }
+
+  .brand-mark {
+    width: 68px;
+  }
+
+  .brand-text {
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .brand-text strong {
+    font-size: 1.48rem;
+    line-height: 1;
+  }
+
+  .brand-text small {
+    font-size: 0.72rem;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+  }
+
+  .site-nav a {
+    display: grid;
+    place-items: center;
+    min-height: 36px;
+    border-radius: 8px;
+    background: rgba(15, 106, 76, 0.08);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  .hero {
+    gap: 12px;
+    margin-bottom: 12px;
   }
 
   .hero-copy,
@@ -855,12 +943,81 @@ ul {
   .contact-panel,
   .contact-card,
   .showcase-shell {
-    padding: 22px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .hero-copy {
+    padding: 20px 18px;
+  }
+
+  .eyebrow {
+    margin-bottom: 8px;
+    font-size: 0.76rem;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
   }
 
   .hero h1 {
     max-width: 100%;
-    font-size: 2.75rem;
+    margin-bottom: 10px;
+    font-size: 2.18rem;
+    line-height: 0.98;
+  }
+
+  .hero-text,
+  .section-text,
+  .service-card p,
+  .contact-card p,
+  .timeline-card p,
+  .quote-card p,
+  .profile-card figcaption,
+  .owner-intro {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: grid;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  .hero-facts {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero-facts li {
+    display: grid;
+    grid-template-columns: minmax(74px, max-content) minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .hero-facts strong {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+
+  .hero-facts li:last-child {
+    display: block;
+  }
+
+  .hero-facts li:last-child strong {
+    margin-bottom: 4px;
   }
 
   .hero-panel-header p,
@@ -868,48 +1025,237 @@ ul {
     max-width: 100%;
   }
 
-  .hero-facts {
-    grid-template-columns: 1fr;
+  .hero-panel {
+    padding: 18px;
+  }
+
+  .hero-panel::before {
+    top: -92px;
+    right: -76px;
+    opacity: 0.55;
+    transform: scale(0.72);
+  }
+
+  .hero-panel-header {
+    margin-bottom: 14px;
+  }
+
+  .hero-panel-header span {
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  .hero-panel-header p {
+    font-size: 1.65rem;
+    line-height: 1;
+  }
+
+  .hero-panel-grid {
+    gap: 8px;
+  }
+
+  .feature-card {
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .feature-card h2 {
+    margin-bottom: 5px;
+    font-size: 1.12rem;
+  }
+
+  .feature-card p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .section {
+    margin-top: 24px;
+  }
+
+  .section-heading {
+    margin-bottom: 14px;
+  }
+
+  .section-heading h2 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+    line-height: 1;
   }
 
   .brand-logo-shell {
-    min-height: 96px;
+    min-height: 64px;
+    padding: 10px;
+    border-radius: 8px;
   }
 
-  .brand {
-    gap: 14px;
+  .brands-grid,
+  .timeline,
+  .contact-grid {
+    gap: 10px;
   }
 
-  .brand-mark {
-    width: 110px;
+  .brand-card {
+    display: grid;
+    grid-template-columns: 94px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
   }
 
-  .brand-text {
-    gap: 3px;
+  .brand-logo {
+    max-width: 100px;
+    max-height: 42px;
   }
 
-  .brand-text strong {
-    font-size: 1.8rem;
+  .brand-meta {
+    gap: 8px;
   }
 
-  .brand-text small {
-    font-size: 1rem;
+  .brand-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.05;
+  }
+
+  .brand-origin {
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+  }
+
+  .flag-icon {
+    width: 14px;
+    height: 14px;
   }
 
   .showcase-toolbar {
+    gap: 10px;
+    margin-bottom: 12px;
     flex-direction: column;
     align-items: flex-start;
   }
 
+  .showcase-note {
+    font-size: 0.76rem;
+    line-height: 1.3;
+  }
+
+  .showcase-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+
+  .showcase-button {
+    width: 100%;
+    min-height: 38px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+  }
+
+  .showcase-track {
+    gap: 12px;
+  }
+
   .showcase-slide {
     min-width: 100%;
+    border-radius: 8px;
   }
 
   .showcase-slide img {
-    height: 220px;
+    height: 170px;
+  }
+
+  .showcase-card-body {
+    gap: 8px;
+    padding: 14px;
+  }
+
+  .showcase-brand {
+    font-size: 0.78rem;
+    line-height: 1.25;
   }
 
   .showcase-card-body h3 {
-    font-size: 1.55rem;
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .showcase-card-body p:last-child {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .owner-card {
+    padding: 18px;
+    border-radius: 8px;
+  }
+
+  .owner-label {
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 0.76rem;
+  }
+
+  .owner-name {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .quote-card,
+  .timeline-card,
+  .contact-card {
+    padding: 14px;
+  }
+
+  .timeline-card h3,
+  .contact-card h3 {
+    font-size: 1.22rem;
+  }
+
+  .contact-section {
+    margin-top: 26px;
+  }
+
+  .contact-card p,
+  .contact-card a {
+    overflow-wrap: anywhere;
+  }
+
+  .site-footer {
+    gap: 6px;
+    padding: 18px 0 0;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-shell {
+    width: min(100% - 18px, 1180px);
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.82rem;
+  }
+
+  .brand-card {
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+
+  .brand-logo {
+    max-width: 88px;
+  }
+
+  .owner-name {
+    font-size: 1.82rem;
   }
 }
