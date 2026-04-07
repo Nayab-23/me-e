@@ -652,6 +652,7 @@ ul {
   place-items: center;
   min-height: 112px;
   padding: 18px;
+  overflow: hidden;
   border-radius: 18px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 242, 235, 0.96));
@@ -663,11 +664,30 @@ ul {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+.brand-logo-shell-zoom {
+  padding: 10px;
+}
+
 .brand-logo {
   width: 100%;
   max-width: 260px;
   max-height: 68px;
   object-fit: contain;
+}
+
+.brand-logo-sawafuji {
+  max-width: 330px;
+  max-height: 96px;
+  transform: scale(1.14);
+}
+
+.brand-logo-fks {
+  width: 112px;
+  height: 112px;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
 }
 
 .brand-meta {
@@ -1092,6 +1112,10 @@ ul {
     border-radius: 8px;
   }
 
+  .brand-logo-shell-zoom {
+    padding: 6px;
+  }
+
   .brands-grid,
   .timeline,
   .contact-grid {
@@ -1109,6 +1133,19 @@ ul {
   .brand-logo {
     max-width: 100px;
     max-height: 42px;
+  }
+
+  .brand-logo-sawafuji {
+    max-width: 132px;
+    max-height: 62px;
+    transform: scale(1.12);
+  }
+
+  .brand-logo-fks {
+    width: 70px;
+    height: 70px;
+    max-width: none;
+    max-height: none;
   }
 
   .brand-meta {
@@ -1253,6 +1290,15 @@ ul {
 
   .brand-logo {
     max-width: 88px;
+  }
+
+  .brand-logo-sawafuji {
+    max-width: 116px;
+  }
+
+  .brand-logo-fks {
+    width: 64px;
+    height: 64px;
   }
 
   .owner-name {
