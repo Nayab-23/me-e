@@ -170,6 +170,7 @@ ul {
 .profile-card,
 .brand-card,
 .timeline-card,
+.why-choose-card,
 .contact-panel,
 .contact-card {
   border: 1px solid var(--line);
@@ -775,6 +776,58 @@ ul {
   line-height: 1;
 }
 
+.why-choose-card {
+  display: grid;
+  gap: 18px;
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top right, rgba(47, 149, 102, 0.16), transparent 18rem),
+    linear-gradient(135deg, rgba(255, 250, 243, 0.92), rgba(247, 255, 242, 0.84));
+}
+
+.why-choose-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid rgba(15, 106, 76, 0.1);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.why-choose-check {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgba(34, 197, 94, 0.7);
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.why-choose-check::after {
+  content: "";
+  width: 11px;
+  height: 6px;
+  border-bottom: 3px solid var(--green);
+  border-left: 3px solid var(--green);
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.why-choose-item p {
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.why-choose-item strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
 .contact-section {
   margin-top: 40px;
 }
@@ -991,6 +1044,7 @@ ul {
   .profile-card,
   .brand-card,
   .timeline-card,
+  .why-choose-card,
   .contact-panel,
   .contact-card,
   .showcase-shell {
@@ -1022,11 +1076,35 @@ ul {
   .service-card p,
   .contact-card p,
   .timeline-card p,
+  .why-choose-item p,
   .quote-card p,
   .profile-card figcaption,
   .owner-intro {
     font-size: 0.88rem;
     line-height: 1.6;
+  }
+
+  .why-choose-card {
+    gap: 10px;
+  }
+
+  .why-choose-item {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .why-choose-check {
+    width: 28px;
+    height: 28px;
+  }
+
+  .why-choose-check::after {
+    width: 9px;
+    height: 5px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
   }
 
   .hero-actions {
