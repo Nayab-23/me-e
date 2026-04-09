@@ -429,6 +429,16 @@ ul {
   font-weight: 700;
 }
 
+.owner-designation {
+  margin-bottom: 14px;
+  color: var(--green);
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .owner-card .section-text + .section-text {
   margin-top: 12px;
 }
@@ -829,7 +839,7 @@ ul {
   }
 
   .brand-text strong {
-    font-size: 1.48rem;
+    font-size: 1.7rem;
     line-height: 1;
   }
 
@@ -1104,6 +1114,12 @@ ul {
     line-height: 1;
   }
 
+  .owner-designation {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
   .quote-card,
   .timeline-card,
   .contact-card {
@@ -1163,5 +1179,9 @@ ul {
 
   .owner-name {
     font-size: 1.82rem;
+  }
+
+  .brand-text strong {
+    font-size: 1.56rem;
   }
 }
