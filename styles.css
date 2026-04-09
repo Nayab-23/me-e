@@ -395,56 +395,170 @@ ul {
 }
 
 .owner-card {
+  position: relative;
+  overflow: hidden;
   margin-top: 8px;
-  padding: 28px;
-  border: 1px solid var(--line);
+  padding: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
+  box-shadow: 0 28px 60px rgba(4, 12, 10, 0.28);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 247, 237, 0.84));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 22%),
+    linear-gradient(145deg, #123624 0%, #0d2b1e 52%, #091611 100%);
+}
+
+.owner-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 250, 243, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.owner-card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 38px;
+  align-items: start;
+}
+
+.owner-summary,
+.owner-details {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .owner-label {
   display: inline-flex;
-  margin-bottom: 10px;
-  padding: 7px 12px;
+  margin-bottom: 14px;
+  padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(197, 61, 47, 0.1);
-  color: var(--red);
+  background: rgba(215, 181, 109, 0.14);
+  color: #d7b56d;
   font-family: "Rajdhani", sans-serif;
-  font-size: 0.98rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .owner-name {
   max-width: 100%;
-  margin-bottom: 14px;
-  font-size: clamp(3rem, 5.5vw, 5.4rem);
-  line-height: 0.94;
+  margin-bottom: 12px;
+  color: rgba(255, 250, 243, 0.98);
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  white-space: normal;
+  text-wrap: balance;
 }
 
 .owner-name strong {
   font-weight: 700;
 }
 
+.owner-name-last {
+  display: block;
+  margin-top: 0.12em;
+}
+
 .owner-designation {
-  margin-bottom: 14px;
-  color: var(--green);
+  max-width: 34ch;
+  margin-bottom: 22px;
+  color: rgba(204, 219, 211, 0.8);
   font-family: "Rajdhani", sans-serif;
-  font-size: 1.08rem;
+  font-size: 0.94rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.owner-card .section-text + .section-text {
-  margin-top: 12px;
+.owner-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.owner-fact {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  margin: 0;
+  border: 1px solid rgba(173, 235, 194, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(232, 238, 233, 0.86);
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.owner-fact-training {
+  gap: 8px;
+}
+
+.owner-fact-flags {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.owner-flag-icon {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 0 1px rgba(255, 250, 243, 0.08);
+}
+
+.owner-details {
+  display: grid;
+  gap: 22px;
+}
+
+.owner-bio-list {
+  display: grid;
+  gap: 12px;
+}
+
+.owner-bio-line {
+  margin: 0;
+  padding-bottom: 12px;
+  color: rgba(232, 238, 233, 0.78);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.68;
+}
+
+.owner-bio-line:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .owner-principle {
-  margin-top: 18px;
+  margin-top: 0;
+  padding: 14px 0 0 16px;
+  border-left: 4px solid #22c55e;
+}
+
+.owner-principle-label {
+  margin-bottom: 6px;
+  color: rgba(173, 235, 194, 0.88);
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.owner-principle p:last-child {
+  max-width: 44ch;
+  color: rgba(244, 248, 245, 0.9);
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.6;
 }
 
 .showcase-section {
@@ -1098,26 +1212,91 @@ ul {
   }
 
   .owner-card {
-    padding: 18px;
+    padding: 28px 24px;
     border-radius: 8px;
   }
 
+  .owner-card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .owner-label {
-    padding: 6px 8px;
+    margin-bottom: 12px;
+    padding: 6px 10px;
     border-radius: 8px;
     font-size: 0.76rem;
   }
 
   .owner-name {
     margin-bottom: 10px;
-    font-size: 2rem;
-    line-height: 1;
+    font-size: 2.15rem;
+    line-height: 1.05;
+    white-space: normal;
+  }
+
+  .owner-name-last {
+    margin-top: 0.1em;
   }
 
   .owner-designation {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    letter-spacing: 0.14em;
+  }
+
+  .owner-facts {
+    gap: 8px;
+  }
+
+  .owner-fact {
+    min-height: 32px;
+    padding: 0 10px;
+    font-size: 0.72rem;
+  }
+
+  .owner-fact-training {
+    gap: 6px;
+  }
+
+  .owner-fact-flags {
+    gap: 3px;
+  }
+
+  .owner-flag-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .owner-details {
+    gap: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .owner-bio-list {
+    gap: 10px;
+  }
+
+  .owner-bio-line {
+    padding-bottom: 10px;
     font-size: 0.9rem;
-    line-height: 1.2;
+    line-height: 1.62;
+  }
+
+  .owner-principle {
+    padding: 14px 0 0 14px;
+  }
+
+  .owner-principle-label {
+    margin-bottom: 6px;
+    font-size: 0.74rem;
+  }
+
+  .owner-principle p:last-child {
+    font-size: 0.94rem;
+    line-height: 1.58;
   }
 
   .quote-card,
@@ -1186,7 +1365,7 @@ ul {
   }
 
   .owner-name {
-    font-size: 1.82rem;
+    font-size: 1.95rem;
   }
 
   .brand-text strong {
