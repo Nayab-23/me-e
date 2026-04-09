@@ -824,13 +824,13 @@ ul {
 
   .brand {
     display: grid;
-    grid-template-columns: 88px minmax(0, 1fr);
-    gap: 14px;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 16px;
     width: 100%;
   }
 
   .brand-mark {
-    width: 88px;
+    width: 112px;
   }
 
   .brand-text {
@@ -1153,11 +1153,11 @@ ul {
   }
 
   .brand {
-    grid-template-columns: 82px minmax(0, 1fr);
+    grid-template-columns: 100px minmax(0, 1fr);
   }
 
   .brand-mark {
-    width: 82px;
+    width: 100px;
   }
 
   .hero h1 {
