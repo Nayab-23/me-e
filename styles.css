@@ -243,6 +243,10 @@ ul {
   margin: 22px 0;
 }
 
+.hero-actions:last-child {
+  margin-bottom: 0;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
