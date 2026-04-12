@@ -619,6 +619,10 @@ ul {
   object-fit: cover;
 }
 
+.showcase-image-sawafuji {
+  object-position: center 68%;
+}
+
 .showcase-card-body {
   display: grid;
   gap: 10px;
