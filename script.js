@@ -35,6 +35,8 @@ if (carousel) {
   let activeIndex = 0;
   let intervalId;
 
+  const isStackedMobile = () => window.innerWidth <= 760;
+
   const getVisibleCount = () => {
     if (window.innerWidth <= 760) {
       return 2;
@@ -47,7 +49,17 @@ if (carousel) {
     return 3;
   };
 
-  const getMaxIndex = () => Math.max(0, slides.length - getVisibleCount());
+  const getMaxIndex = () => {
+    const visibleCount = getVisibleCount();
+
+    if (isStackedMobile()) {
+      return Math.max(0, Math.ceil(slides.length / visibleCount) - 1) * visibleCount;
+    }
+
+    return Math.max(0, slides.length - visibleCount);
+  };
+
+  const getAdvanceStep = () => (isStackedMobile() ? getVisibleCount() : 1);
 
   const renderCarousel = () => {
     if (!slides.length) {
@@ -60,10 +72,15 @@ if (carousel) {
       activeIndex = maxIndex;
     }
 
+    if (isStackedMobile()) {
+      activeIndex = Math.floor(activeIndex / getVisibleCount()) * getVisibleCount();
+    }
+
     const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
     const step = slides[0].getBoundingClientRect().width + gap;
+    const transformIndex = isStackedMobile() ? activeIndex / getVisibleCount() : activeIndex;
 
-    track.style.transform = `translateX(-${activeIndex * step}px)`;
+    track.style.transform = `translateX(-${transformIndex * step}px)`;
 
     slides.forEach((slide, index) => {
       const isVisible = index >= activeIndex && index < activeIndex + getVisibleCount();
@@ -88,7 +105,7 @@ if (carousel) {
   const startAutoplay = () => {
     window.clearInterval(intervalId);
     intervalId = window.setInterval(() => {
-      goToSlide(activeIndex + 1);
+      goToSlide(activeIndex + getAdvanceStep());
     }, 4200);
   };
 
@@ -98,12 +115,12 @@ if (carousel) {
   };
 
   prevButton?.addEventListener("click", () => {
-    goToSlide(activeIndex - 1);
+    goToSlide(activeIndex - getAdvanceStep());
     resetAutoplay();
   });
 
   nextButton?.addEventListener("click", () => {
-    goToSlide(activeIndex + 1);
+    goToSlide(activeIndex + getAdvanceStep());
     resetAutoplay();
   });
 

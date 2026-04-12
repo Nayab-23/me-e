@@ -1413,30 +1413,35 @@ ul {
   }
 
   .showcase-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    grid-template-rows: repeat(2, auto);
     gap: 12px;
   }
 
   .showcase-slide {
-    min-width: calc((100% - 12px) / 2);
+    width: 100%;
+    min-width: 0;
     border-radius: 8px;
   }
 
   .showcase-slide img {
-    height: 140px;
+    height: 170px;
   }
 
   .showcase-card-body {
-    gap: 6px;
-    padding: 12px;
+    gap: 8px;
+    padding: 14px;
   }
 
   .showcase-brand {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     line-height: 1.25;
   }
 
   .showcase-card-body h3 {
-    font-size: 1.08rem;
+    font-size: 1.35rem;
     line-height: 1;
   }
 
