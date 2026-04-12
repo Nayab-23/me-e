@@ -642,9 +642,16 @@ ul {
 }
 
 .showcase-slide img {
+  display: block;
   width: 100%;
   height: 240px;
   object-fit: cover;
+}
+
+.showcase-slide img.showcase-image-product {
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 18px 20px rgba(3, 12, 14, 0.32));
 }
 
 .showcase-image-sawafuji {
@@ -1131,13 +1138,16 @@ ul {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 6px;
+    min-width: 0;
     width: 100%;
   }
 
   .site-nav a {
     display: grid;
     place-items: center;
+    min-width: 0;
     min-height: 36px;
+    padding: 0 4px;
     border-radius: 8px;
     background: rgba(15, 106, 76, 0.08);
     font-size: 0.78rem;
@@ -1585,6 +1595,16 @@ ul {
 
   .section-heading h2 {
     font-size: 1.82rem;
+  }
+
+  .site-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .site-nav a {
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
   }
 
   .brand-card {
