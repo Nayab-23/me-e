@@ -79,7 +79,7 @@ ul {
 .topline {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
   padding: 12px 18px;
   margin-bottom: 18px;
@@ -563,7 +563,8 @@ ul {
 }
 
 .showcase-section {
-  margin-top: 38px;
+  margin-top: 0;
+  margin-bottom: 28px;
 }
 
 .showcase-shell {
@@ -1100,13 +1101,14 @@ ul {
 
   .brand {
     display: grid;
-    grid-template-columns: 112px minmax(0, 1fr);
-    gap: 16px;
+    grid-template-columns: 136px minmax(0, 1fr);
+    gap: 14px;
     width: 100%;
+    align-items: center;
   }
 
   .brand-mark {
-    width: 112px;
+    width: 136px;
   }
 
   .brand-text {
@@ -1566,11 +1568,12 @@ ul {
   }
 
   .brand {
-    grid-template-columns: 100px minmax(0, 1fr);
+    grid-template-columns: 122px minmax(0, 1fr);
+    gap: 12px;
   }
 
   .brand-mark {
-    width: 100px;
+    width: 122px;
   }
 
   .hero h1 {
