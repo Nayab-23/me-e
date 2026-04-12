@@ -37,7 +37,7 @@ if (carousel) {
 
   const getVisibleCount = () => {
     if (window.innerWidth <= 760) {
-      return 1;
+      return 2;
     }
 
     if (window.innerWidth <= 1040) {

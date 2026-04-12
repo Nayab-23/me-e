@@ -170,7 +170,6 @@ ul {
 .profile-card,
 .brand-card,
 .timeline-card,
-.why-choose-card,
 .contact-panel,
 .contact-card {
   border: 1px solid var(--line);
@@ -234,6 +233,31 @@ ul {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.8;
+}
+
+.hero-why-list {
+  display: grid;
+  gap: 18px;
+  max-width: 68ch;
+  margin: 10px 0 24px;
+}
+
+.hero-why-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.hero-why-item p {
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.hero-why-item strong {
+  color: var(--text);
+  font-weight: 800;
 }
 
 .hero-actions {
@@ -785,27 +809,6 @@ ul {
   line-height: 1;
 }
 
-.why-choose-card {
-  display: grid;
-  gap: 18px;
-  padding: 30px;
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at top right, rgba(47, 149, 102, 0.16), transparent 18rem),
-    linear-gradient(135deg, rgba(255, 250, 243, 0.92), rgba(247, 255, 242, 0.84));
-}
-
-.why-choose-item {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
-  padding: 18px;
-  border: 1px solid rgba(15, 106, 76, 0.1);
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.66);
-}
-
 .why-choose-check {
   position: relative;
   display: inline-grid;
@@ -824,17 +827,6 @@ ul {
   border-bottom: 3px solid var(--green);
   border-left: 3px solid var(--green);
   transform: translateY(-1px) rotate(-45deg);
-}
-
-.why-choose-item p {
-  color: var(--muted);
-  font-size: 1.04rem;
-  line-height: 1.75;
-}
-
-.why-choose-item strong {
-  color: var(--text);
-  font-weight: 800;
 }
 
 .contact-section {
@@ -1163,7 +1155,6 @@ ul {
   .profile-card,
   .brand-card,
   .timeline-card,
-  .why-choose-card,
   .contact-panel,
   .contact-card,
   .showcase-shell {
@@ -1195,7 +1186,7 @@ ul {
   .service-card p,
   .contact-card p,
   .timeline-card p,
-  .why-choose-item p,
+  .hero-why-item p,
   .quote-card p,
   .profile-card figcaption,
   .owner-intro {
@@ -1203,15 +1194,14 @@ ul {
     line-height: 1.6;
   }
 
-  .why-choose-card {
-    gap: 10px;
+  .hero-why-list {
+    gap: 12px;
+    margin: 8px 0 18px;
   }
 
-  .why-choose-item {
+  .hero-why-item {
     grid-template-columns: 28px minmax(0, 1fr);
     gap: 12px;
-    padding: 14px;
-    border-radius: 8px;
   }
 
   .why-choose-check {
@@ -1427,26 +1417,26 @@ ul {
   }
 
   .showcase-slide {
-    min-width: 100%;
+    min-width: calc((100% - 12px) / 2);
     border-radius: 8px;
   }
 
   .showcase-slide img {
-    height: 170px;
+    height: 140px;
   }
 
   .showcase-card-body {
-    gap: 8px;
-    padding: 14px;
+    gap: 6px;
+    padding: 12px;
   }
 
   .showcase-brand {
-    font-size: 0.78rem;
+    font-size: 0.7rem;
     line-height: 1.25;
   }
 
   .showcase-card-body h3 {
-    font-size: 1.35rem;
+    font-size: 1.08rem;
     line-height: 1;
   }
 
