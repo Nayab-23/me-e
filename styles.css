@@ -660,9 +660,17 @@ ul {
 
 .showcase-card-body {
   display: grid;
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
   padding: 18px;
   color: var(--white);
+}
+
+.showcase-card-copy {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
 }
 
 .showcase-brand {
@@ -681,6 +689,24 @@ ul {
   font-family: "Rajdhani", sans-serif;
   font-size: 1.8rem;
   line-height: 0.95;
+}
+
+.showcase-slide img.showcase-logo {
+  display: block;
+  width: 76px;
+  height: 42px;
+  box-sizing: border-box;
+  padding: 7px;
+  border: 1px solid rgba(255, 252, 247, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 252, 247, 0.94);
+  box-shadow: 0 12px 22px rgba(3, 12, 14, 0.16);
+  object-fit: contain;
+}
+
+.showcase-slide img.showcase-logo-square {
+  width: 48px;
+  height: 48px;
 }
 
 .showcase-card-body p:last-child {
@@ -1441,8 +1467,23 @@ ul {
   }
 
   .showcase-card-body {
-    gap: 8px;
+    gap: 10px;
     padding: 14px;
+  }
+
+  .showcase-card-copy {
+    gap: 8px;
+  }
+
+  .showcase-slide img.showcase-logo {
+    width: 62px;
+    height: 36px;
+    padding: 6px;
+  }
+
+  .showcase-slide img.showcase-logo-square {
+    width: 40px;
+    height: 40px;
   }
 
   .showcase-brand {
