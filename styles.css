@@ -693,20 +693,31 @@ ul {
 
 .showcase-slide img.showcase-logo {
   display: block;
-  width: 76px;
-  height: 42px;
+  width: 58px;
+  height: 58px;
   box-sizing: border-box;
-  padding: 7px;
-  border: 1px solid rgba(255, 252, 247, 0.28);
-  border-radius: 8px;
-  background: rgba(255, 252, 247, 0.94);
-  box-shadow: 0 12px 22px rgba(3, 12, 14, 0.16);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
   object-fit: contain;
 }
 
+.showcase-slide img.showcase-logo-wide {
+  width: 108px;
+  height: 42px;
+}
+
+.showcase-slide img.showcase-logo-aksa {
+  width: 126px;
+  height: 32px;
+  opacity: 0.9;
+  filter: brightness(0) saturate(100%) invert(79%) sepia(24%) saturate(839%) hue-rotate(359deg) brightness(91%) contrast(88%);
+}
+
 .showcase-slide img.showcase-logo-square {
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
 }
 
 .showcase-card-body p:last-child {
@@ -1476,14 +1487,23 @@ ul {
   }
 
   .showcase-slide img.showcase-logo {
-    width: 62px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .showcase-slide img.showcase-logo-wide {
+    width: 92px;
     height: 36px;
-    padding: 6px;
+  }
+
+  .showcase-slide img.showcase-logo-aksa {
+    width: 104px;
+    height: 28px;
   }
 
   .showcase-slide img.showcase-logo-square {
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
   }
 
   .showcase-brand {
