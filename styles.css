@@ -667,6 +667,13 @@ ul {
   color: var(--white);
 }
 
+.showcase-card-body-logo-stacked {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: start;
+  align-items: start;
+  gap: 8px;
+}
+
 .showcase-card-copy {
   display: grid;
   gap: 10px;
